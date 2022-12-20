@@ -17,8 +17,8 @@ with open('readme.md','r') as file2:
     var5 = file2.read()
     print(Fore.GREEN,var5,Fore.RESET,'\n')
 var = input(Fore.BLUE+ "Enter Your Domain: "+Fore.RESET)
-with open('list.txt','r') as file:
+path = input(Fore.BLUE+'Enter Full File Path: '+Fore.RESET)
+with open(f'{path}','r') as file:
     var2  = file.read()
     x = var2.splitlines()
 print(dir(var,x))
-
