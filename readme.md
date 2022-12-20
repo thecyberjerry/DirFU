@@ -20,7 +20,7 @@
 
 #Usage:
 
-1.git clone `https://github.com/thecyberjerry/DirFU.git` 
+1. git clone `https://github.com/thecyberjerry/DirFU.git` 
 
 2. cd DirFU/
 
