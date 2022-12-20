@@ -18,6 +18,17 @@
 5. Paste your custom Wordlist with the name list.txt and it will give you output with directory fuzzing.
 6. Please provide input in the form of : example.com,google.com,bing.com.
 
+#Usage:
+
+1.git clone `https://github.com/thecyberjerry/DirFU.git` 
+
+2. cd DirFU/
+
+3. python3 DirFU.py
+
+4. Give it a target and Full File Path!
+
+
 For more Fine Result refer to:
 
 https://github.com/maurosoria/dirsearch
