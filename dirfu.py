@@ -2,8 +2,10 @@ import requests
 import threading
 import argparse
 import sys
-
 from colorama import Fore
+import pyfiglet
+banner = pyfiglet.figlet_format("DirFU")
+print(banner)
 
 def dir(z,y):
     with open('readme.md', 'r') as file:
