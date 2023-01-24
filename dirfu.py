@@ -1,7 +1,15 @@
 import requests
+import threading
+import argparse
+import sys
+
 from colorama import Fore
 
 def dir(z,y):
+    with open('readme.md', 'r') as file:
+        var = file.read()
+        print(var)
+    print('====Started====')
     for item in y:
         global url
         url = f'https://{z}/{item}'
@@ -11,14 +19,24 @@ def dir(z,y):
             requests.get(url)
         except requests.ConnectionError:
             pass
+        except KeyboardInterrupt as e:
+            e = '\n KeyBoard Interrupt detected... Exiting!!'
+            print(e)
+            sys.exit()
+
     return "\nFinished!! "
 
-with open('readme.md','r') as file2:
-    var5 = file2.read()
-    print(Fore.GREEN,var5,Fore.RESET,'\n')
-var = input(Fore.BLUE+ "Enter Your Domain: "+Fore.RESET)
-path = input(Fore.BLUE+'Enter Full File Path: '+Fore.RESET)
-with open(f'{path}','r') as file:
-    var2  = file.read()
+parser=argparse.ArgumentParser(
+    usage= '''dirfu.py -d example.com -f /path/to/file.txt''',
+    description='''DirFU a Directory Bruteforcer for beginners''',
+    epilog="""Developer: @instagram.com/thecyberjerry""")
+parser.add_argument('-d','--domain',required=True,help='-d example.com')
+parser.add_argument('-f','--file',required=True, help='-f /path/to/file/file.txt')
+args=parser.parse_args()
+Target = vars(args)
+with open(Target.get('file'),'r') as file:
+    var2 = file.read()
     x = var2.splitlines()
-print(dir(var,x))
+thread = threading.Thread(target=dir(Target.get('domain'),x))
+thread.start()
+
