@@ -15,24 +15,16 @@
 2. It is based on the same logic that our SUBLI Tool is made.
 3. We did some fine changes to the logical code of SUBLI and produced this Bruteforcer.
 4. It will provide you with directory fuzzing output with status code of directory.
-5. Paste your custom Wordlist with the name list.txt and it will give you output with directory fuzzing.
-6. Please provide input in the form of : example.com,google.com,bing.com.
+5. Give it a path to wordlist and it will enumerate for Directories for you.
+6. Please provide [-d] input in the form of : example.com,google.com,bing.com.
+7. Please provide [-f] input in the form of : /path/to/file/file.txt
 
 #Usage:
-
-1. git clone `https://github.com/thecyberjerry/DirFU.git` 
-
-2. cd DirFU/
-
-3. python3 DirFU.py
-
-4. Give it a target and Full File Path!
-
+`python3 dirfu.py -d example.com -f /file.txt`
 
 For more Fine Result refer to:
 
 https://github.com/maurosoria/dirsearch
-
 https://github.com/v0re/dirb
 
 Legal Notice: 
