@@ -1,13 +1,3 @@
-       ----------------DirFu----------------
-
-
-            ****************************
-            *   A simple Directory     *
-            *   Bruteforcer Script     *
-            *   Created in Python      *
-            *   By Himanshu aka TCJ    *
-            ****************************
-
 
 ********************Notes from Developer[Must Read]********************
 
