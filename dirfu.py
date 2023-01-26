@@ -32,6 +32,11 @@ def dir(z,y):
         except KeyboardInterrupt as e:
             e = '\n KeyBoard Interrupt detected... Exiting!!'
             print(e)
+            print("\n""====Finished!!====",
+                  end=("\n\nExecution time took: " + str(time.time() - startTime) + " seconds"))
+            var7 = '\n'.join(var5[200])
+            with open('activeDirectories.txt', 'w') as active:
+                active.write(var7)
             sys.exit()
     print("\n""====Finished!!====",end=("\n\nExecution time took: "+str(time.time()-startTime)+" seconds"))
     var7 = '\n'.join(var5[200])
