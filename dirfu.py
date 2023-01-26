@@ -3,6 +3,7 @@ import threading
 import argparse
 import sys
 from colorama import Fore
+import time
 import pyfiglet
 banner = pyfiglet.figlet_format("DirFU")
 print(banner)
