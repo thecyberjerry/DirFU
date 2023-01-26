@@ -7,26 +7,35 @@ import pyfiglet
 banner = pyfiglet.figlet_format("DirFU")
 print(banner)
 
+startTime= time.time()
 def dir(z,y):
     with open('readme.md', 'r') as file:
         var = file.read()
         print(var)
-    print('====Started====')
+    print('\n====Started====')
+    var5 = {200: []}
     for item in y:
         global url
         url = f'https://{z}/{item}'
+
         try:
-            var4 = requests.get(url,timeout=10)
-            print('\n',url,Fore.YELLOW + f'\n Status Code: {var4.status_code}',Fore.RESET)
-            requests.get(url)
+            var4 = requests.get(url, timeout=10)
+            if var4.status_code == 200:
+                var5[200] += [url]
+                print('\n', url, Fore.BLUE + f'\n Status Code: {var4.status_code}', Fore.RESET)
+            else:
+                print('\n', url, Fore.YELLOW + f'\n Status Code: {var4.status_code}', Fore.RESET)
+
         except requests.ConnectionError:
             pass
         except KeyboardInterrupt as e:
             e = '\n KeyBoard Interrupt detected... Exiting!!'
             print(e)
             sys.exit()
-
-    return "\nFinished!! "
+    print("\n""====Finished!!====",end=("\n\nExecution time took: "+str(time.time()-startTime)+" seconds"))
+    var7 = '\n'.join(var5[200])
+    with open('activeDirectories.txt', 'w') as active:
+        active.write(var7)
 
 parser=argparse.ArgumentParser(
     usage= '''dirfu.py -d example.com -f /path/to/file.txt''',
