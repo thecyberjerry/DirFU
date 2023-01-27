@@ -10,7 +10,7 @@
 7. Please provide [-f] input in the form of : /path/to/file/file.txt
 
 #Usage:
-`python3 dirfu.py -d example.com -f /file.txt`
+`python3 dirfu.py -d example.com -f /file.txt [-p] POST`
 
 For more Fine Result refer to:
 
