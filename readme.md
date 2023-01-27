@@ -8,9 +8,10 @@
 5. Give it a path to wordlist and it will enumerate for Directories for you.
 6. Please provide [-d] input in the form of : example.com,google.com,bing.com.
 7. Please provide [-f] input in the form of : /path/to/file/file.txt
+8. You can change request method to POST if wanted but this is not eligible for HTTP body params it is only for testing
 
 #Usage:
-`python3 dirfu.py -d example.com -f /file.txt`
+`python3 dirfu.py -d example.com -f /file.txt [-p]`
 
 For more Fine Result refer to:
 
