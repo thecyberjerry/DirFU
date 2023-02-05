@@ -4,6 +4,7 @@ import concurrent.futures
 import argparse
 import pyfiglet
 import time
+import os
 from colorama import Fore
 
 startTime= time.time()
@@ -55,7 +56,10 @@ with concurrent.futures.ThreadPoolExecutor() as executor:
         var7 = '\n'.join(dict[200])
         with open('activeDirectories.txt', 'w') as active:
             active.write(var7)
-        sys.exit()
+        try:
+            sys.exit(0)
+        except SystemExit:
+            os._exit(0)
 var7 = '\n'.join(dict[200])
 with open('activeDirectories.txt', 'w') as active:
     active.write(var7)
